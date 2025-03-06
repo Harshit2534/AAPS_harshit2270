@@ -2,6 +2,7 @@ import java.util.*;
 public class Pallindrome_String {
 
     public static void main(String[] args) {
+        //Approach-1
         // String s = "abcddcba";
         // char[] s2 = s.toCharArray();
         // int n = s.length();
@@ -15,17 +16,36 @@ public class Pallindrome_String {
         // } else {
         //     System.out.println("It is not a palindrome");
         // }
+
+        //Approach-2
+        // String s = "abcddcba";
+        // int n = s.length();
+        // boolean isPalindrome = true; 
+
+        // for (int i = 0; i < n / 2; i++) {
+        //     if (s.charAt(i) != s.charAt(n - 1 - i)) {
+        //         isPalindrome = false; 
+        //         break; 
+        //     }
+        // }
+
+        // if (isPalindrome) {
+        //     System.out.println("It is a palindrome");
+        // } else {
+        //     System.out.println("It is not a palindrome");
+        // }
         String s = "abcddcba";
         int n = s.length();
         boolean isPalindrome = true; 
-
-        for (int i = 0; i < n / 2; i++) {
-            if (s.charAt(i) != s.charAt(n - 1 - i)) {
+        int i=0,j=n-1;
+        while(i<=j){
+             if (s.charAt(i) != s.charAt(j)) {
                 isPalindrome = false; 
                 break; 
             }
+             i++;
+             j--;
         }
-
         if (isPalindrome) {
             System.out.println("It is a palindrome");
         } else {
